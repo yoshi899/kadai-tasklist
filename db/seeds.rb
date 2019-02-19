@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #test_data
-(1..100).each do |number|
-  Task.create(status: 'open ' + number.to_s, content: 'rubyの勉強 ' + number.to_s)
-end
+# (1..100).each do |number|
+#   Task.create(status: 'open ' + number.to_s, content: 'rubyの勉強 ' + number.to_s)
+# end
