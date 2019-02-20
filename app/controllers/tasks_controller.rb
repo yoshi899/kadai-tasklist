@@ -61,9 +61,9 @@ class TasksController < ApplicationController
   #このクラスのみで定義する
   private
   
-  def set_task
-    @task = Task.find(params[:id])
-  end
+  # def set_task
+    # @task = Task.find(params[:id])
+  # end
   
   # review2-4で他者が編集できないように追加したコード
   def correct_user
