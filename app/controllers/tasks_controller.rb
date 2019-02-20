@@ -66,7 +66,7 @@ class TasksController < ApplicationController
   # end
   
   # review2-4で他者が編集できないように追加したコード
-  def correct_user
+  def set_task
     @task = current_user.tasks.find_by(id: params[:id])
     unless @task
       redirect_to root_url
