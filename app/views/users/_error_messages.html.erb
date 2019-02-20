@@ -1,0 +1,10 @@
+ <!--review2-2のエラーMessageを表示させる-->
+<% if user.errors.any? %>
+  <div class="alert alert-warning">
+    <ul>
+      <% user.errors.full_messages.each do |user| %>
+        <li><%= user %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

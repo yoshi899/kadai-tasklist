@@ -6,6 +6,9 @@
   <div class="col-md-6 col-md-offset-3">
 
     <%= form_for(@user) do |f| %>
+    
+    <!--review2-2のエラーMessageを表示させる-->
+    <%= render 'users/error_messages', user: f.object %>
 
       <div class="form-group">
         <%= f.label :name, 'Name' %>
