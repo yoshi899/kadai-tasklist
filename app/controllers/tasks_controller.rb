@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show, :new, :create]
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  # before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :show, :update, :destroy]
   def index
     if logged_in?
       # @tasks = Task.all.page(params[:page]).per(10)
@@ -66,7 +67,7 @@ class TasksController < ApplicationController
   # end
   
   # review2-4で他者が編集できないように追加したコード
-  def set_task
+  def correct_user
     @task = current_user.tasks.find_by(id: params[:id])
     unless @task
       redirect_to root_url
